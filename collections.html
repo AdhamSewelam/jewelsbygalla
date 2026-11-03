@@ -735,6 +735,26 @@ body.is-locked{overflow:hidden}
   .js [data-reveal-img] img,.hero__slide .media img{transform:none!important}
 }
 
+/* Compact dropdowns — keep every panel well inside a laptop screen (MacBook 13–14") */
+.mega{max-height:calc(100svh - var(--header-h-compact) - 36px);overflow-y:auto;overscroll-behavior:contain}
+.catm,.hjm{padding-block:26px 30px}
+.mega--coll .wrap.cm{padding-block:26px 26px;grid-template-columns:1fr 240px}
+.mega h4{margin-bottom:10px;padding-bottom:10px}
+.cm__list .cm__link{padding:12px 0}
+.hjm{grid-template-columns:minmax(0,1fr) 240px;gap:clamp(32px,5vw,96px)}
+.hjm__list{margin-bottom:16px}
+.hjm__link{padding:11px 0!important}
+.hjm__stone{padding:7px 0!important}
+.hjm__grid{margin-bottom:16px}
+.hjm__feature .media,.cm__frame{aspect-ratio:1/1}
+.hjm__title{font-size:1.6rem}
+.hjm__cap{left:16px;right:16px;bottom:14px}
+.cm__preview figcaption{padding-top:10px}
+.catm ul li a{padding:2px 0}
+.catm h5{margin-bottom:6px}
+.cm__foot .wrap{padding-block:6px}
+@media (min-width:861px){.hero__slide[data-narrow] .hero__content{width:min(470px,32vw)!important}}
+
 /* All headings use the static Bodoni Moda Bold; italic sub-lines keep the Bodoni Moda italic */
 .didone,.hero__title,.onward__title,.hjm__title,.sq__name,.footer h4{font-family:var(--head)!important;font-weight:700!important}
 .didone em,.hero__title em,.lhero__title em{font-family:var(--didone)!important;font-weight:400!important}
@@ -859,6 +879,18 @@ body.is-locked{overflow:hidden}
   .sq__name{font-size:clamp(1.25rem,5.8vw,1.5rem);bottom:34px;padding:0 6px}
   .sq__sfx{display:block;font-family:var(--grotesk);font-weight:500;font-size:.625rem;letter-spacing:.16em;margin-top:6px}
   .sq__sfx br{display:none}
+}
+
+
+/* High Jewelry hero — full-bleed 16:9, jewelry centred, copy over a dark fade on the left */
+@media (min-width:861px){
+  .lhero--full{position:relative;display:block;min-height:0;aspect-ratio:16/9;max-height:calc(100svh - 104px);width:100%;overflow:hidden}
+  .lhero--full .lhero__media{position:absolute;inset:0}
+  .lhero--full .lhero__media picture,.lhero--full .lhero__media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .lhero--full .lhero__media::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(27,21,19,.82) 0%,rgba(27,21,19,.5) 28%,rgba(27,21,19,0) 46%)}
+  .lhero--full .lhero__text{position:absolute;z-index:2;left:0;top:0;bottom:0;width:min(700px,38vw);padding-right:0}
+  .lhero--full .lhero__title{font-size:clamp(2.4rem,4vw,4.4rem)}
+  .lhero--full .lhero__intro{color:rgba(242,238,229,.82)}
 }
 
 </style>
@@ -1236,7 +1268,9 @@ const MEDIA = {
   coverBirthstone: PHOTO.coverBirthstone, // birthstone collection cover.jpg
   coverStackables: PHOTO.coverStackables, // stackable collec cover.jpg
   hjLanding:   PHOTO.hjLanding,   // retouched_JEWELS_LAUNCH_POSTS (post copy + logo removed)
-  collLanding: PHOTO.collLanding  // the collections hero piclanding page.JPG
+  collLanding: PHOTO.collLanding, // the collections hero piclanding page.JPG
+  hjPageWide:  PHOTO.hjPageWide,  // PET_0955 16:9 — High Jewelry page hero
+  hjPageM:     PHOTO.hjPageM
 };
 
 /* Latest collection — multi-gem cluster pieces (WhatsApp folder, 26 Oct 2026).
