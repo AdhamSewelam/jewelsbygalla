@@ -271,10 +271,11 @@ body.is-locked{overflow:hidden}
 @media (max-width:1240px){.mega--coll .wrap.cm{grid-template-columns:1fr 240px}}
 
 /* Drawer — collection groups */
-.drawer__groups{padding:4px 0 22px;display:grid;gap:18px}
+.drawer__groups{padding:0;display:block}
 .drawer__groups h5{margin:0 0 6px;font-size:.6875rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
-.drawer__groups ul{columns:1!important;padding:0!important}
-.drawer__groups a{font-family:var(--grotesk);font-weight:500;font-size:.875rem!important;letter-spacing:.14em!important;text-transform:uppercase;color:var(--ink)!important;padding:5px 0!important}
+.drawer__groups ul{padding:0 0 20px!important}
+.drawer__groups a{font-family:var(--grotesk);font-weight:400;font-size:.8125rem!important;letter-spacing:.12em!important;text-transform:uppercase;color:var(--ink-2)!important;padding:9px 0!important}
+.drawer__groups .badge-new{font-size:.5rem;padding:3px 6px 2px;margin-left:8px}
 
 /* Search overlay */
 .search{position:fixed;inset:0;z-index:90;background:rgba(255,255,255,.985);display:grid;align-content:start;padding-top:18vh;opacity:0;visibility:hidden;transition:opacity .45s var(--ease),visibility 0s .45s}
